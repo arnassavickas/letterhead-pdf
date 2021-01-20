@@ -1,5 +1,4 @@
 const express = require('express');
-var path = require('path');
 
 const app = express();
 const port = 3000;
@@ -11,4 +10,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => console.log(`app listening on port ${port}`));
+app.listen(process.env.PORT || port, () =>
+  console.log(`app listening on port ${port}`)
+);
