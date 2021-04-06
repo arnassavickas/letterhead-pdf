@@ -36,9 +36,13 @@ img {
   }
 }
 
+#title {
+  margin-bottom: 2rem;
+}
+
 .custom-file-input {
   color: transparent;
-  width: 131px;
+  width: 140px;
 }
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
@@ -73,12 +77,13 @@ img {
 .dropzone {
   display: flex;
   justify-content: center;
-  /* background-color: rgba(255, 45, 45, 0.274); */
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
-  padding: 10% 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {

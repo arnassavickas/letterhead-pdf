@@ -112,7 +112,7 @@ const App = () => {
               className='custom-file-input'
               multiple
             />
-            <Typography variant='body1'>or simply drag it here</Typography>
+            <Typography variant='body1'>or simply drag here</Typography>
           </div>
         </Fade>
       </Dropzone>
