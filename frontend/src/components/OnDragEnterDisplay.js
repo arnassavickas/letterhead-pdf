@@ -7,7 +7,7 @@ const OnDragEnterDisplay = ({ isOver }) => {
   return (
     <Fade in={isOver}>
       <div id='on-hover' style={display}>
-        <Typography variant='h2'>galite paleisti</Typography>
+        <Typography variant='h2'>drop it</Typography>
         <CheckIcon style={{ fontSize: 100 }} />
       </div>
     </Fade>

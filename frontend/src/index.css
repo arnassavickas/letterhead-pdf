@@ -44,7 +44,7 @@ img {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Įkelkite PDF failą';
+  content: 'Select PDF file(s)';
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   color: black;
   display: inline-block;
@@ -54,6 +54,7 @@ img {
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-weight: 700;

@@ -13,10 +13,10 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      const headerFile = await fetch('/pdfs/header.pdf');
+      const headerFile = await fetch('/header.pdf');
       const headerBuffer = await headerFile.arrayBuffer();
       setHeader(headerBuffer);
-      const footerFile = await fetch('/pdfs/footer.pdf');
+      const footerFile = await fetch('/footer.pdf');
       const footerBuffer = await footerFile.arrayBuffer();
       setFooter(footerBuffer);
     })();
@@ -51,9 +51,12 @@ const App = () => {
       });
     });
     const pdfFile = await pdfDoc.save();
+
+    // Extracting invoice number and date from a specific filename
     const dateRegex = /.{10}/;
     const invoiceNameRegex = /AIR\d{4,5}/;
     const standardInvoiceRegex = /Pardavimai - PVM sf/;
+
     let fileName;
     if (standardInvoiceRegex.test(file.name)) {
       fileName = `${file.name.match(invoiceNameRegex)} ${file.name.match(
@@ -64,7 +67,7 @@ const App = () => {
     }
 
     download(pdfFile, `${fileName}`, 'application/pdf');
-    enqueueSnackbar(`"${fileName}" parsiųsta`, {
+    enqueueSnackbar(`"${fileName}" downloaded`, {
       variant: 'success',
       autoHideDuration: 6000,
     });
@@ -77,7 +80,7 @@ const App = () => {
   const checkAndCreate = async (files) => {
     for (let i = 0; i < files.length; i++) {
       if (files[i].type !== 'application/pdf') {
-        enqueueSnackbar(`failas "${files[i].name}" nėra PDF`, {
+        enqueueSnackbar(`file "${files[i].name}" is not PDF`, {
           variant: 'error',
           autoHideDuration: 6000,
         });
@@ -98,13 +101,8 @@ const App = () => {
       >
         <Fade in={!isOver}>
           <div className='content' style={display}>
-            <img
-              className='logo'
-              src='/air_idea_logo.png'
-              alt='Air Idea Logo'
-            />
             <Typography className='pdf' variant='h2'>
-              PDF
+              LETTERHEAD.pdf
             </Typography>
             <input
               type='file'
@@ -114,7 +112,7 @@ const App = () => {
               className='custom-file-input'
               multiple
             />
-            <Typography variant='body1'>Arba nutempkite jį čia</Typography>
+            <Typography variant='body1'>or simply drag it here</Typography>
           </div>
         </Fade>
       </Dropzone>
