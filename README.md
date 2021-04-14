@@ -4,6 +4,8 @@ LETTERHEAD.pdf is an easy-to-use app for applying a letterhead to your pdf files
 ## Usage
 Replace `header.pdf`  and  `footer.pdf` in `/src` folder with your files and and then run:
 
+     git clone https://github.com/arnassavickas/letterhead-pdf.git
+     cd letterhead-pdf
      npm install
      npm run
 
